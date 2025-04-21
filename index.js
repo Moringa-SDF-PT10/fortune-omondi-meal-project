@@ -177,7 +177,7 @@ async function nextRound() {
     }
     document.getElementById("hint").textContent = `Hint (Category): ${generateHint(meal.category)}`;
     //update the placeholder
-    document.getElementById("userS-guess").placeholder = "Guess the origin (e.g., Italian)";
+    document.getElementById("userS-guess").placeholder = "Guess the origin (e.g Italian)";
     //display meal content
     displayMealRound(meal);         //write function separately
   
