@@ -99,6 +99,12 @@ I added an extra feature to show a few random ingredients from the selected meal
 - Ingredients section (bonus!)
 - Retro game-style fonts and styles
 
+# Lessons Learned
+
+- How to work with external APIs (MealDB).
+- Practiced DOM manipulation and dynamic rendering.
+- Improved my styling skills to match a game theme.
+- Gained experience with JS game logic and UI feedback.
 
 ## Final Words
 
