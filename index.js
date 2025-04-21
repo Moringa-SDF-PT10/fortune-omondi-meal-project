@@ -98,12 +98,13 @@ document.getElementById("submit-btn").addEventListener("click", () => {
   const correctArea = currentMeal.area.toLowerCase();
 
   //compare user's guess
-  if (userInput === correctCategory || userInput === correctArea) {
+  if (userInput === correctArea) {
+
     feedback.textContent = "Correct!";
     feedback.style.color = "green";
     score++;
   } else {
-    feedback.textContent = `Incorrect! It was: ${currentMeal.category} (${currentMeal.area})`;
+    feedback.textContent = `Incorrect! The correct answer was: ${currentMeal.area}`;
     feedback.style.color = "red";
   }
 
@@ -165,7 +166,17 @@ async function nextRound() {
   
     currentMeal = meal;        //store for checking answer
     mealHistory.push(meal);    //Keep track of what showed
-  
+    //to generate the masked hint
+    // Mask the category to use as a hint __ali_ / italic
+    function generateHint(category) {
+        if (!category || category.length < 2) return category;
+        
+        const firstLetter = category[0];
+        const hidden = category.slice(1).replace(/./g, "_");
+        return `${firstLetter}${hidden}`;
+    }
+    document.getElementById("hint").textContent = `Hint (Category): ${generateHint(meal.category)}`;
+
     //display meal content
     displayMealRound(meal);         //write function separately
   
@@ -197,9 +208,11 @@ function endGame() {
   
     mealHistory.forEach((meal, index) => {
       const li = document.createElement("li");
-      li.textContent = `Round ${index + 1}: ${meal.name} – ${meal.category} (${meal.area})`;
+      li.textContent = `Round ${index + 1}: ${meal.name} – Origin: ${meal.area}`;
       summaryList.appendChild(li);
     });
+    //after hiding the meal display, also clear the hint
+    document.getElementById("hint").textContent = "";
   }
   document.getElementById("restart-btn").addEventListener("click", () => {
     document.getElementById("start-btn").click(); //Reuse the start game logic
@@ -242,13 +255,16 @@ function displayMealRound(meal) {
     mealImg.classList.add("pop");
 
     const list = document.getElementById("ingredient-list");
-    list.innerHTML = ""; // Clear old list items
+    list.innerHTML = ""; //clear old list items
 
     meal.ingredients.forEach((item) => {
         const li = document.createElement("li");
         li.textContent = item;
         list.appendChild(li);
     });
+
+    //show the name of the meal as a hint
+    document.getElementById("meal-name").textContent = `Meal Name: ${meal.name}`;
 
     document.getElementById("userS-guess").value = "";
     document.getElementById("feedback").textContent = "";
@@ -275,6 +291,7 @@ function resetGame() {
     document.getElementById("meal-summary").innerHTML = "";
     document.getElementById("score").textContent = "0";
     document.getElementById("end").classList.add("hidden");
+    document.getElementById("hint").textContent = "";
     nextRound();
 }
 });
