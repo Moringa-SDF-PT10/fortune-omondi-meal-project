@@ -176,7 +176,8 @@ async function nextRound() {
         return `${firstLetter}${hidden}`;
     }
     document.getElementById("hint").textContent = `Hint (Category): ${generateHint(meal.category)}`;
-
+    //update the placeholder
+    document.getElementById("userS-guess").placeholder = "Guess the origin (e.g., Italian)";
     //display meal content
     displayMealRound(meal);         //write function separately
   
@@ -265,7 +266,8 @@ function displayMealRound(meal) {
 
     //show the name of the meal as a hint
     document.getElementById("meal-name").textContent = `Meal Name: ${meal.name}`;
-
+    //show full category
+    document.getElementById("hint").textContent = `Category: ${meal.category}`;
     document.getElementById("userS-guess").value = "";
     document.getElementById("feedback").textContent = "";
 }
