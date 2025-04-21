@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> MYSTREY MEAL 🍽️</title>
+
+    <!--linnking to external css for styling-->
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body >
+    <!--header section that will have game title and the button to start the game-->
+    <header>
+        <h1> MYSTREY 🍽️ MEAL 🎮 GAME 🕹️ </h1>
+        <button id="start-btn">START GAME</button>
+    </header>
+    <!--CREATE a setion for meal display  that is initially hiddem and also collect guess-->
+    <section id="meal-dispaly" class="hidden">
+        <!--image of a randomly fetched meal from THEMEALDB-->
+        <img id="meal-img"  src="" alt="Mystrey  meal image" />
+
+        <!--list of ingridients to be stored in the <ul>-->
+        <ul id="ingridients-list"></ul>
+
+        <!--take guessing user inputabout the category -->
+        <input type="text" id="userS-guess" placeholder="Guess the category..." />
+        
+        <!--button to submit guess-->
+        <button id="submit-btn">SUBMIT GUESS</button>
+
+        <!--IS it correct/incorrect guess "FEEDBACK"-->
+        <P id="feedback"></P>
+    </section>
+    <!--create a section to diaplay after the rounds of the game "END" it is also initially hidden-->
+    <section id="end" class="hidden">
+        <h2>GAME🎮OVER🔚</h2>
+        
+        <!--show final score-->
+        <p>Your Score: <span id="score">0</span></p>
+
+        <!--summary of all meals displayed earlier-->
+        <ul id="meal-summary"></ul>
+
+        <!--Buttton to restart the game after a succesfull 3 rounds attempt-->
+        <button id="restart-btn">RESTART GAME</button>
+    </section>
+    <!--link to .js to control the game logic-->
+    <script src="index.js"></script>
+</body>
+</html>
