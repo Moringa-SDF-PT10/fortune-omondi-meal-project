@@ -272,11 +272,6 @@ function displayMealRound(meal) {
     document.getElementById("feedback").textContent = "";
 }
 
-
-//end of Game Summary functionality Check
-document.getElementById("meal-display").classList.add("hidden");
-document.getElementById("end").classList.remove("hidden");
-
 //FINAL TECH-TOUCH 😒😂
 //lets users press Enter instead of clicking “Submit”
 document.getElementById("userS-guess").addEventListener("keyup", (e) => {

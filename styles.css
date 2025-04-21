@@ -2,16 +2,42 @@
 /* Base styles for the page */
 body {
     font-family: Arial, sans-serif;
-    background-color:lavender
-    text-align: center;
-    margin: 0;
+    background-color: rgb(255, 229, 180);
     padding: 20px;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* add direction if using flex */
+    
 }
 
-/*header style*/
+
 header {
     margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe3b3, #ffb347);/*make it lively and cute */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 3px dashed #ff914d;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+
+header h1 {
+    font-size: 2.5rem;
+    color: #4b2e2e;
+    text-shadow: 1px 1px 1px #fff;
+    animation: bounce 2s infinite alternate ease-in-out;
+}
+/*Add subtle animation to the title*/
+/*just giving it a bit life*/
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
 
 /*general button styling*/
 button {
@@ -19,13 +45,13 @@ button {
     font-size: 16px;
     margin-top: 10px;
     cursor: pointer;
-    background-color: #28a745;
+    background-color: #e0b10a;
     color: white;
     border: none;
     border-radius: 6px;
 }
 button:hover {
-    background-color: #218838;
+    background-color: #3e3103;
 }
 
 /* meal image to de dispalyed styling */
@@ -37,7 +63,7 @@ img {
 
 /* Utility class to hide elements from the user */
 .hidden {
-    display: none;
+    display: none !important;
 }
 /* ingredients list styling */
 #ingredient-list {
@@ -71,5 +97,53 @@ input {
       transform: scale(1);
       opacity: 1;
     }
+  }
+  /*just adding more life*/
+  /*target the #meal-display section to[Center it vertically and horizontally, Fill the remaining screen space after the header, Add background, padding, and more life]*/
+  #meal-display {
+    flex-grow: 1;
+    background-color: rgb(247, 196, 102);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*eye‑catching ingredients font */
+#ingredient-list li {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;              /*bump it up a bit */
+    color: #d35400;                /*a lively orange */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 6px;            /*space out each item */
+  }
+  
+  /*gamey meal title and hint */
+#meal-name, #hint {
+    font-family: 'Press Start 2P', cursive; /* or 'Bangers', cursive */
+    color: #a58814;
+    text-shadow: 2px 2px 0 #000;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 10px;
   }
   

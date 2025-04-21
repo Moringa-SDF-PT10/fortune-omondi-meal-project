@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title> MYSTREY MEAL 🍽️</title>
 
+    <!--Bangers font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <!--google Font for ingredients-->
+    <link  href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+
     <!--linnking to external css for styling-->
     <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -19,14 +25,14 @@
         <!--image of a randomly fetched meal from THEMEALDB-->
         <img id="meal-img"  src="" alt="Mystrey  meal image" />
 
+        <!--show meal full name-->
+        <h2  id="meal-name" class="meal-title"></h2>
+
+         <!--paragraph to show category to act as hint-->
+         <p id="hint"></p>
+
         <!--list of ingredient to be stored in the <ul>-->
         <ul id="ingredient-list"></ul>
-
-        <!--show meal full name-->
-        <h3  id="meal-name" class="meal-title"></h3>
-
-        <!--paragraph to show area hint-->
-        <p id="hint"></p>
 
         <!--take guessing user inputabout the category -->
         <input type="text" id="userS-guess" placeholder="Guess the category..." />
