@@ -1,3 +1,5 @@
+//ensure DOM is loaded first
+document.addEventListener("DOMContentLoaded", function() {
 /*function that fetchs/gets a random meal from the MealDB API */
 /*async defimes asynchronous function to use await inside it to wait for API responses */
 async function fetchRandomMeal(){
@@ -275,3 +277,4 @@ function resetGame() {
     document.getElementById("end").classList.add("hidden");
     nextRound();
 }
+});
