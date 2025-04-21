@@ -54,3 +54,22 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+
+
+/*makes the game feel more alive when meals appear*/
+.pop {
+    animation: popIn 0.5s ease;
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
