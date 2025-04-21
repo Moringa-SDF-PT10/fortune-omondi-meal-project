@@ -241,7 +241,7 @@ function displayMealRound(meal) {
     mealImg.alt = `Image of ${meal.name}`;
     mealImg.classList.add("pop");
 
-    const list = document.getElementById("ingredients-list");
+    const list = document.getElementById("ingredient-list");
     list.innerHTML = ""; // Clear old list items
 
     meal.ingredients.forEach((item) => {
